@@ -144,9 +144,6 @@ I am a Bachelor of Technology student at IIT Roorkee specializing in Materials E
   <h3>🔬 Intern at Repello AI</h3>
   <p><i>February 2025 - Present</i></p>
   <ul>
-    <li>Working on a fully funded research project under Prof. Piyush Shrivastava</li>
-    <li>Focus on Computational approximation of quantum partition functions</li>
-    <li>Part of one of India's most prestigious undergraduate research programs</li>
   </ul>
 </div>
 
