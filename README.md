@@ -204,7 +204,6 @@ Feel free to reach out for collaborations or discussions!
   
 *This site showcases my research, projects, and contributions to the field of AI and machine learning.*
 
-<img src="https://komarev.com/ghpvc/?username=Ayush-Singh677&color=brightgreen" alt="Profile views"/>
 
 </div>
 
