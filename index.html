@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ayush Singh - AI & Machine Learning Researcher</title>
   <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
+      background-color: #f9fafb;
       color: #333;
+      scroll-behavior: smooth;
     }
     .container {
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto;
       padding: 20px;
       text-align: center;
@@ -26,16 +31,21 @@
     a {
       color: #4285F4;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
     a:hover {
-      text-decoration: underline;
-    }
-    .social-links {
-      margin: 20px 0;
+      color: #1a73e8;
     }
     .social-links img {
+      width: 30px;
       margin: 0 10px;
+      transition: transform 0.3s ease;
     }
+    .social-links img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Section Styling */
     .section {
       margin: 40px 0;
     }
@@ -46,13 +56,14 @@
     }
     .card {
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 20px;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
     ul {
       list-style: none;
@@ -61,26 +72,54 @@
     li {
       margin: 10px 0;
     }
+
+    /* Details Styling */
     details {
       background: #fff;
-      border-radius: 8px;
+      border-radius: 12px;
       padding: 15px;
       margin: 15px 0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    details:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
     summary {
       cursor: pointer;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
+    summary:hover {
+      color: #1a73e8;
+    }
+
+    /* Footer Styling */
     footer {
       margin-top: 40px;
       font-size: 0.9em;
       color: #777;
+      text-align: center;
+    }
+
+    /* Advanced Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-in {
+      animation: fadeIn 0.8s ease-out;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container fade-in">
     <h1>Ayush Singh</h1>
     <p>🔬 AI & Machine Learning Researcher | IIT Roorkee | Materials Engineering</p>
     <div class="social-links">
@@ -89,18 +128,18 @@
       <a href="mailto:ayush_s@mt.iitr.ac.in"><img src="https://img.shields.io/badge/-Email-c14438?style=flat&logo=Gmail&logoColor=white" alt="Email"></a>
     </div>
 
-    <div class="section">
-      <blockquote>
+    <div class="section fade-in">
+      <blockquote style="font-style: italic; color: #555;">
         "Specializing in Vision-Language Models, Large Language Models, and Computational Methods"
       </blockquote>
     </div>
 
-    <div class="section">
+    <div class="section fade-in">
       <h2>About Me</h2>
       <p>I am a Bachelor of Technology student at IIT Roorkee specializing in Materials Engineering with a strong focus on AI research. My work spans various domains including vision-language models, large language models, and computational optimization techniques.</p>
     </div>
 
-    <div class="section">
+    <div class="section fade-in">
       <h2>Education</h2>
       <ul>
         <li><strong>Indian Institute of Technology Roorkee</strong> (2023-2027)<br>Bachelor of Technology in Materials Engineering<br>CGPA: 8.0/10</li>
@@ -108,7 +147,7 @@
       </ul>
     </div>
 
-    <div class="section">
+    <div class="section fade-in">
       <h2>Experience</h2>
       <div class="card">
         <h3>Repello AI</h3>
@@ -120,7 +159,7 @@
       </div>
     </div>
 
-    <div class="section">
+    <div class="section fade-in">
       <h2>Research Publications</h2>
       <details open>
         <summary><strong>IPO: Your Language Model is Secretly a Preference Classifier</strong> | <i>Under Review at ACL</i></summary>
@@ -136,23 +175,9 @@
           <li>Achieved competitive accuracy on GLUE and WMT16 benchmarks with RoBERTa, BERT, and T5 models.</li>
         </ul>
       </details>
-      <details open>
-        <summary><strong>Adaptive Urban Planning: A Hybrid Framework for Balanced City Development</strong> | <i>Accepted at AAAI AI4UP Workshop</i></summary>
-        <ul>
-          <li>Built a Multi-Agent urban planning framework leveraging LLM agents.</li>
-          <li>Used Genetic Algorithms for optimization, achieving significant improvements in livability and accessibility.</li>
-        </ul>
-      </details>
-      <details open>
-        <summary><strong>Captioning and Task-Specific Prompting for Improved VLM Performance</strong> | <i>Arxiv</i></summary>
-        <ul>
-          <li>Proposed a pipeline to enhance VQA capabilities in mathematical contexts.</li>
-          <li>Evaluated on Gemini-1.5-Flash, LLaVa, Florence-2, and Phi 3.5 Vision Instruct across datasets like Geo170k, CountBench, and MathVision.</li>
-        </ul>
-      </details>
     </div>
 
-    <div class="section">
+    <div class="section fade-in">
       <h2>Notable Projects</h2>
       <div class="project-grid">
         <div class="card">
@@ -171,57 +196,10 @@
             <li>Built semantic search with FAISS and T5-large for question-answering.</li>
           </ul>
         </div>
-        <div class="card">
-          <h3>🎨 Image Denoising and Colorization</h3>
-          <p><a href="https://github.com/Ayush-Singh677">GitHub</a></p>
-          <ul>
-            <li>Utilized a combined loss function (MSE + Perceptual Loss) for image enhancement.</li>
-            <li>Leveraged UNET architecture as the backbone model.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>📊 Optimization Using Monte Carlo Simulation</h3>
-          <p><a href="https://github.com/Ayush-Singh677">GitHub</a></p>
-          <ul>
-            <li>Simulated 20,000 portfolio possibilities based on historical data.</li>
-            <li>Proposed an optimal portfolio strategy for maximum returns.</li>
-          </ul>
-        </div>
       </div>
     </div>
 
-    <div class="section">
-      <h2>Extracurricular Activities</h2>
-      <div class="card">
-        <h3>Vision and Language Group (VLG), IIT Roorkee</h3>
-        <p><i>Core Member</i> | Feb 2024 – Present</p>
-        <ul>
-          <li>Organize and moderate paper discussions.</li>
-          <li>Contribute to research projects and help develop an active Deep Learning community on campus.</li>
-        </ul>
-        <p><a href="https://vlg.iitr.ac.in">VLG Website</a> | <a href="https://github.com/Ayush-Singh677">GitHub</a></p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Certifications</h2>
-      <ul>
-        <li><strong>Time Series Analysis</strong> | CAC IITG | <a href="#">Credentials</a></li>
-        <li><strong>Google Advanced Data Analytics</strong> | Google | <a href="#">Credentials</a></li>
-        <li><strong>Google Data Analytics</strong> | Google | <a href="#">Credentials</a></li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Programming Languages:</strong> Python, C++, MATLAB</li>
-        <li><strong>Frameworks & Tools:</strong> TensorFlow, PyTorch, FAISS, UNET, T5, OCR</li>
-        <li><strong>Research Areas:</strong> Vision-Language Models, Large Language Models, Computational Optimization, Quantum Computing</li>
-      </ul>
-    </div>
-
-    <footer>
+    <footer class="fade-in">
       <p>Contact me: <a href="mailto:ayush_s@mt.iitr.ac.in">ayush_s@mt.iitr.ac.in</a></p>
       <p>This site showcases my research, projects, and contributions to the field of AI and machine learning.</p>
     </footer>
