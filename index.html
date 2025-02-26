@@ -4,341 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayush Singh - Portfolio</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-light: #dbeafe;
-            --dark: #111827;
-            --light: #f8fafc;
-            --accent: #f97316;
-            --text: #4b5563;
-            --text-light: #6b7280;
-            --border: #e5e7eb;
-            --card-bg: #ffffff;
-            --section-gap: 3rem;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
-        
-        body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.7;
-            font-size: 16px;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0;
-        }
-        
-        .container {
-            padding: 0 2rem;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary), #1d4ed8);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            border-radius: 0 0 2rem 2rem;
-            margin-bottom: 3rem;
-            box-shadow: var(--shadow);
-        }
-        
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.025em;
-        }
-        
-        header p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            color: var(--dark);
-            margin: 0 0 1.5rem 0;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            letter-spacing: -0.025em;
-        }
-        
-        h2::after {
-            content: "";
-            flex-grow: 1;
-            height: 2px;
-            background: linear-gradient(to right, var(--primary-light), transparent);
-            margin-left: 1rem;
-        }
-        
-        h3 {
-            font-size: 1.3rem;
-            color: var(--dark);
-            margin: 0 0 0.5rem 0;
-            font-weight: 600;
-        }
-        
-        p, ul {
-            margin-bottom: 1rem;
-        }
-        
-        ul {
-            padding-left: 1.5rem;
-        }
-        
-        li {
-            margin-bottom: 0.5rem;
-            position: relative;
-        }
-        
-        li::marker {
-            color: var(--primary);
-        }
-        
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--accent);
-        }
-        
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin: 0;
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 1rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .contact-item svg {
-            color: var(--accent);
-        }
-        
-        .contact-item a, .contact-item span {
-            color: white;
-        }
-        
-        .contact-item a:hover {
-            color: var(--primary-light);
-        }
-        
-        .section {
-            margin-bottom: var(--section-gap);
-            background: var(--card-bg);
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: var(--shadow);
-        }
-        
-        .education-item, .experience-item, .project-item, .publication-item {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .education-item:last-child, .experience-item:last-child, 
-        .project-item:last-child, .publication-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-        
-        .flex-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .date {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            font-weight: 500;
-            background-color: var(--primary-light);
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            display: inline-block;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-        
-        .skill-tag {
-            background-color: var(--primary);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: transform 0.2s;
-        }
-        
-        .skill-tag:hover {
-            transform: translateY(-2px);
-        }
-        
-        .publication-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 0.75rem;
-        }
-        
-        .publication-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            font-size: 0.9rem;
-            background-color: var(--primary-light);
-            color: var(--primary);
-            padding: 0.35rem 0.75rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s;
-        }
-        
-        .publication-links a:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .section-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .cert-card {
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            border: 1px solid var(--border);
-            background-color: var(--light);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .cert-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-        
-        .cert-card h3 {
-            margin-bottom: 0.75rem;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-        
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .highlight {
-            color: var(--accent);
-            font-weight: 600;
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.25rem;
-            }
-            
-            header {
-                padding: 3rem 1.5rem;
-            }
-            
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .section {
-                padding: 1.5rem;
-            }
-            
-            .flex-header {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            
-            .date {
-                align-self: flex-start;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.75rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-      <h1>Ayush Singh</h1>
-      <p>B.Tech Student at IIT Roorkee | AI Research</p>
+    <header style="display: flex; align-items: center; justify-content: space-between;">
+        <!-- Header Content -->
+        <div style="flex: 1;">
+          <h1>Ayush Singh</h1>
+          <p>B.Tech Student at IIT Roorkee | AI Research</p>
+          
+          <div class="contact-info">
+              <div class="contact-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <a href="mailto:ayush_s@mt.iitr.ac.in">ayush_s@mt.iitr.ac.in</a>
+              </div>
+              <div class="contact-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <a href="https://github.com/Ayush-Singh677" target="_blank">Ayush-Singh677</a>
+              </div>
+              <div class="contact-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                      <rect x="2" y="9" width="4" height="12"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                  <a href="https://www.linkedin.com/in/ayush-singh-40539522b/" target="_blank">Ayush Singh</a>
+              </div>
+              <div class="contact-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>IIT Roorkee, Uttarakhand, India - 247667</span>
+              </div>
+          </div>
+        </div>
       
-      <div class="contact-info">
-          <div class="contact-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-              <a href="mailto:ayush_s@mt.iitr.ac.in">ayush_s@mt.iitr.ac.in</a>
-          </div>
-          <div class="contact-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-              </svg>
-              <a href="https://github.com/Ayush-Singh677" target="_blank">Ayush-Singh677</a>
-          </div>
-          <div class="contact-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                  <rect x="2" y="9" width="4" height="12"></rect>
-                  <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-              <a href="https://www.linkedin.com/in/ayush-singh-40539522b/" target="_blank">Ayush Singh</a>
-          </div>
-          <div class="contact-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <span>IIT Roorkee, Uttarakhand, India - 247667</span>
-          </div>
-      </div>
-  </header>
+        <!-- Image Section -->
+        <div style="flex: 1; text-align: center;">
+          <img 
+            src="profile.png" 
+            alt="Ayush Singh Profile Picture" 
+            style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover;"
+          />
+        </div>
+      </header>
   
   <main class="container">
       <!-- <section class="section" id="education">
@@ -371,7 +86,7 @@
                   <h3>Intern at Repello AI</h3>
                   <span class="date">February 2025 - Present</span>
               </div>
-              <p>Currently working as an intern.</p>
+              <p>Currently working as an intern, contributing to AI research and development projects.</p>
           </div>
       </section>
       
@@ -402,7 +117,7 @@
               </div>
               <ul>
                   <li>Developed LoRA-Mini, reducing trainable parameters by 20x compared to Vanila LoRA.</li>
-                  <li>Evaluated LoRA-Mini on GLUE (Natural Language Understanding) and WMT16 (Language Trainslation) benchmarks, achieving competitive accuracy on RoBERTa, BERT, and T5 models</li>
+                  <li>Evaluated LoRA-Mini on GLUE (Natural Language Understanding) and WMT16 (Language Trainslation) benchmarks, achieving competitive accuracy on RoBERTa, BERT, and T5 models.</li>
               </ul>
               <div class="publication-links">
                 <a href="https://arxiv.org/abs/2411.15804" target="_blank">
@@ -419,11 +134,11 @@
           <div class="publication-item">
               <div class="flex-header">
                   <h3>Adaptive Urban Planning: A Hybrid Framework for Balanced City Development</h3>
-                  <span class="date">AAAI AI4UP Workshop</span>
+                  <span class="date">Accepted at AAAI AI4UP Workshop</span>
               </div>
               <ul>
-                  <li>Developed a Multi-Agent urban planning framework leveraging the reasoning and collaborative of different LLM agents</li>
-                  <li>Used Genetic Algorithms and specialized agents for optimization and regional customization and achieved significant improvement in livability and accessibility compared to previous methods</li>
+                  <li>Developed a Multi-Agent urban planning framework leveraging the reasoning and collaborative of different LLM agents.</li>
+                  <li>Used Genetic Algorithms and specialized agents for optimization and regional customization and achieved significant improvement in livability and accessibility compared to previous methods.</li>
               </ul>
               <div class="publication-links">
                 <a href="https://arxiv.org/abs/2412.15349" target="_blank">
@@ -439,8 +154,8 @@
                   <span class="date">Arxiv</span>
               </div>
               <ul>
-                  <li>Proposed a pipeline to enhance VQA capabilities in mathematical contexts, improving model performance across geometry, algebra, and counting tasks</li>
-                  <li>Evaluated our approach on four diverse VLMs (Gemini-1.5-Flash, LLaVa, Florence-2, Phi 3.5 Vision Instruct) on datasets such as Geo170k, CountBench, and MathVision</li>
+                  <li>Proposed a pipeline to enhance VQA capabilities in mathematical contexts, improving model performance across geometry, algebra, and counting tasks.</li>
+                  <li>Evaluated our approach on four diverse VLMs (Gemini-1.5-Flash, LLaVa, Florence-2, Phi 3.5 Vision Instruct) on datasets such as Geo170k, CountBench, and MathVision.</li>
               </ul>
               <div class="publication-links">
                 <a href="https://arxiv.org/abs/2410.05928" target="_blank">
@@ -460,8 +175,8 @@
                   <span class="date">Research Project</span>
               </div>
               <ul>
-                  <li>Tested the ability of multiple VLMs in simple geometrical tasks</li>
-                  <li>Proposed a keyword based captioning approach to extract relevant information from the image</li>
+                  <li>Tested the ability of multiple VLMs in simple geometrical tasks.</li>
+                  <li>Proposed a keyword based captioning approach to extract relevant information from the image.</li>
               </ul>
               <div class="publication-links">
                   <!-- <a href="" target="_blank">
@@ -481,10 +196,10 @@
                   <span class="date">1st in HiLabs Hackathon</span>
               </div>
               <ul>
-                  <li>Developed OCR-based PDF text extraction, using binarization to extract text from PDFs</li>
-                  <li>Implemented semantic search with FAISS, enabling fast document similarity matching for user queries</li>
-                  <li>Implemented a distance based thresholding to handle out of context questions</li>
-                  <li>Built a T5-large question-answering system, delivering real-time answers based on retrieved PDF context</li>
+                  <li>Developed OCR-based PDF text extraction, using binarization to extract text from PDFs.</li>
+                  <li>Implemented semantic search with FAISS, enabling fast document similarity matching for user queries.</li>
+                  <li>Implemented a distance based thresholding to handle out of context questions.</li>
+                  <li>Built a T5-large question-answering system, delivering real-time answers based on retrieved PDF context.</li>
               </ul>
               <div class="publication-links">
                   <a href="https://github.com/Ayush-Singh677/Smart-Querying-for-PDFs" target="_blank">
@@ -500,8 +215,8 @@
                   <span class="date">Computer Vision Project</span>
               </div>
               <ul>
-                  <li>Utilised a combined loss containing MSE and Perceptual loss to achieve denoising and colourisation</li>
-                  <li>Utilised a UNET architecture a the backbone for model</li>
+                  <li>Utilised a combined loss containing MSE and Perceptual loss to achieve denoising and colourisation.</li>
+                  <li>Utilised a UNET architecture a the backbone for model.</li>
               </ul>
               <div class="publication-links">
                   <a href="https://github.com/Ayush-Singh677/Image-Denoising" target="_blank">
